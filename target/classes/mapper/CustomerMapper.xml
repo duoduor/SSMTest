@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wdd.mapper.CustomerMapper">
+
+ <resultMap id="customerSet"  type="wdd.dto.Customer" >
+        <id column="customer_id" property="customerId" />
+        <result column="store_id" property="storeId" />
+        <result column="first_name" property="firstName" />
+        <result column="last_name" property="lastName" />
+        <result column="email" property="email" />
+  </resultMap>
+
+ <select id="findByFirstName" parameterType="string"
+   resultType="wdd.dto.Customer">
+    select customer_id,store_id,first_name,last_name,email from customer where first_name=#{firstName}
+   </select>
+   
+   <select id="customerSelect"  parameterType="wdd.dto.Customer" resultMap="customerSet">
+   select * from customer order by customer_id limit #{cursor},10
+   </select>
+   
+   
+   <insert id="insertOneCustomer" parameterType="wdd.dto.Customer" >
+   insert into customer(first_name,last_name,email) values(#{firstName},#{lastName},#{email})
+   </insert>
+   
+   <delete id="delete"  parameterType="wdd.dto.Customer">
+   delete * from customer where first_name = #{firstName}
+   </delete>
+   
+   <update id="update"  parameterType="wdd.dto.Customer">
+	update set  customer_id=#{customerId},store_id=#{storeId},
+	first_name=#{firstName},email=#{email} where first_name = #{firstName} 
+   </update>
+   <!-- 分页查询
+   select * from  table order by  id   limit    (intPage - 1) * PageRow    , intPage * PageRow
+PageRow     每页多少条记录
+intPage  页数-->
+</mapper>

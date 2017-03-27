@@ -1,0 +1,8 @@
+wdd\dto\Customer.class
+wdd\controller\FilmController.class
+wdd\test\TestCustomerLoginService.class
+wdd\controller\CustomerLoginController.class
+wdd\service\CustomerService.class
+wdd\service\impl\CustomerServiceImpl.class
+wdd\mapper\CustomerMapper.class
+wdd\dto\Film.class
