@@ -10,6 +10,7 @@ public interface CustomerMapper {
 	List<Customer>  customerSelect(Customer customer);
     int  insertOneCustomer(Customer customer);
     int update(Customer customer);
-	int delete(Customer customer);
+	int delete(int customerId);
+	Customer customerById(int customerId);
 
 }

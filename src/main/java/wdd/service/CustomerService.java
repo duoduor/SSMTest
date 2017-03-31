@@ -11,6 +11,7 @@ public interface CustomerService {
 	 List<Customer> customerSelect(Customer customer);
 	int insert(Customer customer);
 	int update(Customer customer);
-	int delete(Customer customer);
+	int delete(int customerId);
+	Customer customerById(int customerId);
 
 }

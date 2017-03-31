@@ -5,35 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style type="text/css">
-#div1{
-background-color: blue;
-position: relative;
-height: 80px;
-font-size: 35px;
-font-weight: bold;
-}
 
+<link rel="stylesheet" type="text/css"  href="css/index.css" />
+<script  src="../css/jquery-3.2.0.min.js"></script>
+
+<style type="text/css">
 
 </style>
 <title>index页面</title>
-<script  src="../css/jquery-3.2.0.min.js"></script>
+
 <script type="text/javascript">
-function action1(event){
-	var val = document.getElementById("current");
-	
-	
-}
-function action2(event){
-	var val = document.getElementById("current");
-	
-	
-}
-function action3(event){
-	var val = document.getElementById("current");
-	
-	
-}
+
 </script>
 </head>
 <body>
@@ -44,8 +26,9 @@ function action3(event){
 <a href="<%=request.getContextPath()%>/filmSelect">Film 管理</a>
 </div>
 
-<div>
-<a href="insertOneCustomer">新增 </a>
+<div id="div3">
+<h3>客户管理</h3>
+<a href="<%=request.getContextPath()%>/insertOneCustomer">新增 </a>
 <center>
  <table cellpadding="0" cellspacing="0" border="1px">
    <tr>
@@ -54,6 +37,7 @@ function action3(event){
    <th>firstName</th>
    <th>lastName</th>
    <th>email</th>
+   <th>操作</th>
   </tr> 
 <c:forEach items="${list}" var="tom">
 <tr>
@@ -62,12 +46,18 @@ function action3(event){
    <th> <input value="${tom.firstName}" style="border-style:none" readonly/></th>
    <th> <input value="${tom.lastName}" style="border-style:none" readonly/></th>
    <th> <input value="${tom.email}" style="border-style:none" readonly/></th>
+   <th><a href="<%=request.getContextPath()%>/update/${tom.customerId} " >修改</a>
+       <a href="<%=request.getContextPath()%>/delete/${tom.customerId}">删除</a></th>
  </tr>
 </c:forEach>
 </table>
-<input type="button" value="上一页" id="before"  onclick="action1(event)" />
-<input type="button" value="1" id="current"  onclick="action2(event)" />
-<input type="button" value="下一页" id="next"  onclick="action3(event)" />
+<a href="<%=request.getContextPath()%>/upPage/${page}">上一页</a>
+${page} 
+<!-- <%=request.getAttribute("page") %> -->
+
+<a href="<%=request.getContextPath()%>/downPage/${page}">下一页</a>
+
+
 
 
 </center>

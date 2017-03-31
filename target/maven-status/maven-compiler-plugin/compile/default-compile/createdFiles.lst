@@ -1,3 +1,4 @@
+wdd\mapper\FilmMapper.class
 wdd\dto\Customer.class
 wdd\controller\FilmController.class
 wdd\test\TestCustomerLoginService.class

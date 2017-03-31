@@ -20,8 +20,7 @@ public class CustomerServiceImpl implements CustomerService{
 	private CustomerMapper customerMapper;
 	
 	public Customer  checkLogin(String firstName, String password) {
-//		System.out.println("我要去查找数据库的名字去啦");
-//		System.out.println(customerMapper);
+
 			return 	customerMapper.findByFirstName(firstName);
 		
 	}
@@ -40,25 +39,17 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerMapper.update(customer);
 	}
 
-	public int delete(Customer customer) {
-		return customerMapper.delete(customer);
+	public int delete(int customerId) {
+		return customerMapper.delete(customerId);
+	}
+
+	public Customer customerById(int customerId) {
+		
+		
+		return customerMapper.customerById(customerId);
 	}
 	
 
 
-//	
-//	@Service
-//	@Transactional
-//	public class FilmServiceImpl implements FilmService {
-//		 @Autowired
-//		 private FilmMapper filmMapper;
-//
-//		public List<Film> select(Film film) {
-//			List<Film> filmList=filmMapper.select(film);
-//			return filmList;
-//		}
-//		public int insert(Film film) {
-//			return filmMapper.insertOneItem(film);
-//		}
 
 }

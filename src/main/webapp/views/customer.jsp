@@ -14,26 +14,23 @@
 <br>
 <br>
 <br>
-<form action="insertOneCustomer" method="post">
+<form action="<%=request.getContextPath()%>/saveOneCustomer" method="post">
 
-
+storeId:<input type="text" name="storeId"/><br>
 firstName:<input type="text" name="firstName"/><br>
 lastName:<input type="text" name="lastName"/><br>
 email:<input type="text" name="email"/><br>
+addressId:<input type="text" name="addressId"/><br>
+active:<input type="text" name="active"/><br>
+
+<input type="submit" value="新建"/>
+<a href="<%=request.getContextPath()%>/noSaveCustomer">取消</a>
 
 
-<input type="submit" name="提交"/>
-<input type="button" name="编辑">
-<input type="button" name="删除">
 
 </form>
 
 </center>
-
-
-
-
-
 
 </body>
 </html>

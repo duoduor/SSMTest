@@ -1,5 +1,6 @@
 package wdd.dto;
 
+
 public class Customer {
 	
 	private  int customerId;
@@ -7,6 +8,38 @@ public class Customer {
 	private String firstName;
 	private String	lastName;
 	private String  email;
+	private int addressId;
+	private int active;
+	private String createDate;
+	private String lastUpdate;
+	
+	
+	public int getAddressId() {
+		return addressId;
+	}
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
+	}
+	public int getActive() {
+		return active;
+	}
+	public void setActive(int active) {
+		this.active = active;
+	}
+	
+	public String getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(String createDate) {
+		this.createDate = createDate;
+	}
+	public String getLastUpdate() {
+		return lastUpdate;
+	}
+	public void setLastUpdate(String lastUpdate) {
+		this.lastUpdate = lastUpdate;
+	}
+
 	private int cursor;
 	
 	public int getCustomerId() {
